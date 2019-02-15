@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mRlall = findViewById(R.id.rl_all);
 
         String deviceBrand = NotchPhoneUtils.getDeviceBrand(); //获取手机厂商
-
+        //判断相应手机是否有刘海屏
         if ("vivo".equals(deviceBrand)) {
             isNotch = NotchPhoneUtils.HasNotchVivo(MainActivity.this);
             type = 1;
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
             isNotch = NotchPhoneUtils.HasNotchXiaoMi();
             type = 4;
         }
+
         NotchPhoneUtils.onConfigurationChanged(MainActivity.this, isNotch, type, mRlall);
     }
-
 
     //屏幕方向发生改变的回调方法
     @Override
